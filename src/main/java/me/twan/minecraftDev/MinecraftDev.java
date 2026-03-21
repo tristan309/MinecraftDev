@@ -1,6 +1,6 @@
 package me.twan.minecraftDev;
 
-import me.twan.minecraftDev.Listeners.ChatListener;
+import me.twan.minecraftDev.Listeners.send;
 import me.twan.minecraftDev.Listeners.Join;
 import me.twan.minecraftDev.commands.die;
 import me.twan.minecraftDev.commands.itemCommand;
@@ -15,7 +15,10 @@ public final class MinecraftDev extends JavaPlugin {
        getCommand("name") .setExecutor(new name());
        getCommand("item") .setExecutor(new itemCommand());
        getServer() .getPluginManager().registerEvents(new Join(), this);
-       getServer() .getPluginManager().registerEvents(new ChatListener(), this);
+       getServer() .getPluginManager().registerEvents(new send(this), this);
+       getConfig().options().copyDefaults();
+       saveDefaultConfig();
+
     }
 
     @Override
