@@ -19,12 +19,13 @@ public class send implements Listener {
         if(plugin.getConfig().getBoolean("Listener") == true){
             Player p = event.getPlayer();
             if(event.getMessage().equals("Start"))
-                plugin.getConfig().set("Stage", "0");
+                plugin.getConfig().set("Stage", 0);
                 plugin.saveConfig();
                 p.sendTitle(ChatColor.GOLD+"Yes", "It Worked" );
                 if(event.getMessage().equals("yes")){
-                    plugin.getConfig().set("Stage", "2");
+                    plugin.getConfig().set("Stage", 2);
                     plugin.saveConfig();
+                    plugin.saveDefaultConfig();
                     p.sendMessage();
             }
         }
