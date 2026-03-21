@@ -1,0 +1,29 @@
+name: MinecraftDev
+version: '1.0-SNAPSHOT'
+main: me.twan.minecraftDev.MinecraftDev
+api-version: '1.20'
+authors: [ Het Egeltje ]
+commands:
+  name:
+    description: "Het Weet Alles Het Luistert Altijd Mee!!"
+    aliases:
+      - n
+      - na
+      - nam
+      - name
+      - a
+      - m
+      - e
+  die:
+    description: "Jij gaat dood!!!"
+    aliases:
+      - d
+      - dood
+      - tristan
+      - nigger
+      - bitch
+      - stitch
+  item:
+    description: "Geeft Knockback"
+    aliases:
+      -gay
