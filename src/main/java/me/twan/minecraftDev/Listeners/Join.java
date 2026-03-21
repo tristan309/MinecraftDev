@@ -23,8 +23,9 @@ public class Join implements Listener {
     @EventHandler
     public void quit(PlayerQuitEvent event){
         Player p = event.getPlayer();
-        if(p.hasPlayedBefore()){
-            event.setQuitMessage (ChatColor.GREEN + "Yo Fakka Niggas " + ChatColor.GOLD + p.getName() +ChatColor.GREEN + "Just Left " + ChatColor.RED + "That Was Fast...");
+        if(p.hasPlayedBefore()) {
+            event.setQuitMessage(ChatColor.GREEN + "Yo Fakka Niggas " + ChatColor.GOLD + p.getName() + ChatColor.GREEN + "Just Left " + ChatColor.RED + "That Was Fast...");
+        }
             else{
                 event.setQuitMessage(ChatColor.GOLD + "Yo Fakka Niggas " +p.getName() + "Is Now Not Here Anymore Bitches" );
             }

@@ -1,5 +1,6 @@
 package me.twan.minecraftDev;
 
+import me.twan.minecraftDev.Listeners.Join;
 import me.twan.minecraftDev.commands.die;
 import me.twan.minecraftDev.commands.itemCommand;
 import me.twan.minecraftDev.commands.name;
@@ -12,6 +13,7 @@ public final class MinecraftDev extends JavaPlugin {
        getCommand("die") .setExecutor(new die());
        getCommand("name") .setExecutor(new name());
        getCommand("item") .setExecutor(new itemCommand());
+       getServer() .getPluginManager().registerEvents(new Join(), this);
     }
 
     @Override
