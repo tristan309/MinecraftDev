@@ -1,5 +1,7 @@
 package me.twan.minecraftDev;
 
+import me.twan.minecraftDev.Listeners.Item;
+import me.twan.minecraftDev.Listeners.getRightClickListener;
 import me.twan.minecraftDev.Listeners.send;
 import me.twan.minecraftDev.Listeners.Join;
 import me.twan.minecraftDev.commands.die;
@@ -18,6 +20,8 @@ public final class MinecraftDev extends JavaPlugin {
        getServer() .getPluginManager().registerEvents(new send(this), this);
        getConfig().options().copyDefaults();
        saveDefaultConfig();
+       getServer().getPluginManager().registerEvents(new getRightClickListener(), this);
+       getServer().getPluginManager().registerEvents(new Item(), this);
 
     }
 

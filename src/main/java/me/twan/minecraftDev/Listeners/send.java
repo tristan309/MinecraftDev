@@ -16,14 +16,16 @@ public class send implements Listener {
     @EventHandler
     public void chatListener(PlayerChatEvent event){
 
+
+
         if(plugin.getConfig().getBoolean("Listener") == true){
             Player p = event.getPlayer();
             if(event.getMessage().equals("Start"))
                 plugin.getConfig().set("Stage", 0);
                 plugin.saveConfig();
-                p.sendTitle(ChatColor.GOLD+"Yes", "It Worked" );
-                if(event.getMessage().equals("yes")){
-                    plugin.getConfig().set("Stage", 2);
+                p.sendMessage(ChatColor.GOLD+"Yes You Did Start It");
+                if(event.getMessage().equals("yes") && plugin.getConfig().getInt("stage") == 0){
+                    plugin.getConfig().set("Stage", 1);
                     plugin.saveConfig();
                     plugin.saveDefaultConfig();
                     p.sendMessage();
