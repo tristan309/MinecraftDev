@@ -29,7 +29,7 @@ public class getRightClickListener implements Listener {
         if(event.getRightClicked().getType() == EntityType.PIG){
 
             Pig pig = (Pig)event.getRightClicked();
-            pig.getWorld().createExplosion(pig.getLocation(), 100000000);
+            pig.getWorld().createExplosion(pig.getLocation(), 100);
 
         }
 }
