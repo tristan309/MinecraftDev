@@ -2,10 +2,13 @@ package me.twan.minecraftDev.Listeners;
 
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Pig;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 public class getRightClickListener implements Listener {
@@ -20,4 +23,15 @@ public class getRightClickListener implements Listener {
             }
         }
     }
+@EventHandler
+    public void pibbie(PlayerInteractAtEntityEvent event){
+        Player p = (Player) event.getPlayer();
+        if(event.getRightClicked().getType() == EntityType.PIG){
+
+            Pig pig = (Pig)event.getRightClicked();
+            pig.getWorld().createExplosion(pig.getLocation(), 100000000);
+
+        }
+}
+
 }
